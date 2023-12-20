@@ -15,7 +15,8 @@ import { dirname } from 'path';
 const PORT = process.env.PORT || 3500;
 const __dirname = dirname(__filename);
 
-const db = new Database(process.env.MONGODB_URL, {
+const db = new Database(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_P}@cluster0.3aoqvjq.mongodb.net/`, {
+    dbName: process.env.DB_D,
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
